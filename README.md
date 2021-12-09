@@ -25,7 +25,7 @@ Gtrend daily data with the word "bitcoin" are also disappointing. Other keywords
 
 In order to dismiss the auto-corelation phenomenon, I also tried to implement an attention mechanism (SetNeuralNetworkAttention()). It gave me few results and I'm not sure I'm using it the best way possible as I struggle to deeply understand how it works. 
 
-My code is not perfect, I'm a MD not an engineer but I try ly best ! Feel free to correct my mistakes and any help to improve the model/code would be appreciated. 
+My code is not perfect, I'm a MD not an engineer 😅 but I try my best ! Feel free to correct my mistakes and any help to improve the model/code would be appreciated. 
 
 To resume, we need to 1/perfect the model, 2/improve the quantity of data 3/ extend the time range of the learning set 4/try, try, and try again.
 
