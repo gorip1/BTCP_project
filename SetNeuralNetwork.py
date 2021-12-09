@@ -22,9 +22,9 @@ def n_days_in_the_future():
 def set_neural_network(X_train, Y_train):
     neural_network = tf.keras.Sequential([
         layers.LSTM(units = 128, return_sequences=True, input_shape=(X_train.shape[1], X_train.shape[2]), activation='relu'),
-        layers.Dropout(0.4),
+        layers.Dropout(0.3),
         layers.LSTM(units=64, return_sequences=False, activation='relu'),
-        layers.Dropout(0.2),
+        layers.Dropout(0.1),
         layers.Dense(1)
     ])
     return neural_network
@@ -38,7 +38,7 @@ def batch_size():
     return batch_size
 
 def epochs():
-    epochs = 150
+    epochs = 300
     return epochs
 
 ### set training/test data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
