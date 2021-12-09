@@ -184,12 +184,16 @@ def build_table():
     test_sample.drop(0, inplace=True)
     test_sample.reset_index(drop=True, inplace=True)
 
-    ## select data to remove from the set
-    data = test_sample.drop(['Date','market_dir', 'volume_traded', 'GNFRM', 'GNHRate', 'GNNetRealProfitLoss', 'GNPUELLM', 'REAL_LOSS', 'REAL_PRO', 'GNRealProfitsToValueRatio', 'GNSOPR', 'GNSupplyProfit', 'SVL124', 'SVLDW', 'GNTransacSize', 'price_low', 'price_high', 'price_open',  'trade_count_change', 'btc_per_trade_adjusted', 'RSI9', 'RSI25',  'DXY', 'GOLD', 'GTREND_BTC',
-                             'month', 'sma8_norm', 'sma20_norm', 'sma_diff_20_8', 'volume_change', 'volatility_down', 'MACD_Hist',  'trades_count'], axis = 1)
+    ## selectable data to add to the set
+    #   'Date','market_dir', 'volume_traded'
+    # , 'GNHRate', 'GNNetRealProfitLoss', 'GNRealProfitsToValueRatio','GNSupplyProfit', 'SVL124', 'GNTransacSize'
+    # , 'GNPUELLM', 'REAL_LOSS', 'REAL_PRO', 'GNRealProfitsToValueRatio', 'GNSOPR', 'GNSupplyProfit', 'SVL124', 'SVLDW', 'GNTransacSize'
+    # ,'price_low', 'price_high', 'price_open',  'trade_count_change', 'btc_per_trade_adjusted', 'RSI9', 'RSI25',  'DXY', 'GOLD', 'GTREND_BTC','month'
+    # , 'sma8_norm', 'sma20_norm', 'sma_diff_20_8', 'volume_change', 'volatility_down', 'MACD_Hist'
+    # , 'trades_count', 'SMA_20', 'SMA_8','candle_rep', 'price_close', 'volatility', 'volatility_up', 'day', 'RSI'
 
     ## select data that will be in the set
-    data = data[ [ 'candle_rep', 'price_close', 'volatility_up', 'RSI', 'SMA_20', 'SMA_8', 'day', 'volatility']]
+    data = test_sample[['candle_rep', 'price_close', 'volatility', 'volatility_up', 'day', 'RSI', 'sma8_norm']]
     data.to_csv("csv/prepared_data.csv", index=False)
 
     ## Visualize input dataset
